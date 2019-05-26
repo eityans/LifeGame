@@ -25,9 +25,7 @@ while True:
 
     #マウス入力
     for e in pygame.event.get():
-        mouse_pressed = pygame.mouse.get_pressed()
-        if mouse_pressed[0]:
-
+        if e.type == MOUSEBUTTONDOWN:
             mx, my = int(e.pos[0]/size), int(e.pos[1]/size)
             cells[my][mx] = 1 - cells[my][mx]
         if e.type == QUIT:
